@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9110651672189350"
-     crossorigin="anonymous"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Hub pessoal de links úteis com visual moderno e responsivo inspirado na Netflix.">
@@ -27,6 +25,7 @@
         <a href="educacao.html">Educação</a>
         <a href="utilidades.html">Utilidades</a>
         <a href="tecnologia.html">Tecnologia</a>
+        <a href="criatividade-apps.html">Criatividade e Apps</a>
       </nav>
     </div>
   </header>
@@ -52,7 +51,7 @@
       <div class="quick-grid">
         <a class="quick-card entertainment" href="entretenimento.html">
           <span class="quick-label">Entretenimento</span>
-          <strong>Jogos, mangás, TV e criação visual</strong>
+          <strong>Mangás, motion design e ferramentas criativas</strong>
         </a>
         <a class="quick-card education" href="educacao.html">
           <span class="quick-label">Educação</span>
@@ -65,6 +64,10 @@
         <a class="quick-card technology" href="tecnologia.html">
           <span class="quick-label">Tecnologia</span>
           <strong>Softwares, reparos, tuning e escritório online</strong>
+        </a>
+        <a class="quick-card creativity" href="criatividade-apps.html">
+          <span class="quick-label">Criatividade e Apps</span>
+          <strong>Apps criativos, animações e ferramentas visuais</strong>
         </a>
       </div>
     </section>
@@ -128,6 +131,21 @@
         <button class="carousel-btn next" type="button" aria-label="Avançar itens"><span>&rsaquo;</span></button>
       </div>
     </section>
+
+    <section class="carousel-section container">
+      <div class="section-heading row-heading">
+        <div>
+          <span class="section-tag">Catálogo</span>
+          <h2>Criatividade e Apps</h2>
+        </div>
+        <a href="criatividade-apps.html" class="section-link">Ver tudo</a>
+      </div>
+      <div class="carousel-shell">
+        <button class="carousel-btn prev" type="button" aria-label="Voltar itens"><span>&lsaquo;</span></button>
+        <div class="card-row" data-category="criatividade"></div>
+        <button class="carousel-btn next" type="button" aria-label="Avançar itens"><span>&rsaquo;</span></button>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -135,43 +153,5 @@
   </footer>
 
   <script src="script.js"></script>
-  <div id="cookie-banner" style="
-position: fixed;
-bottom: 0;
-left: 0;
-width: 100%;
-background: #111;
-color: #fff;
-padding: 15px;
-text-align: center;
-z-index: 9999;
-font-size: 14px;
-">
-Este site utiliza cookies para melhorar sua experiência e exibir anúncios personalizados.
-<button onclick="acceptCookies()" style="
-margin-left: 10px;
-padding: 8px 12px;
-background: #e50914;
-color: white;
-border: none;
-cursor: pointer;
-border-radius: 4px;
-">
-Aceitar
-</button>
-</div>
-
-<script>
-function acceptCookies() {
-  localStorage.setItem("cookiesAccepted", "true");
-  document.getElementById("cookie-banner").style.display = "none";
-}
-
-window.onload = function() {
-  if(localStorage.getItem("cookiesAccepted") === "true") {
-    document.getElementById("cookie-banner").style.display = "none";
-  }
-}
-</script>
 </body>
 </html>
