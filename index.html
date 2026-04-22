@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Hub profissional com categorias organizadas e visual escuro estilo Netflix.">
-  <title>Hub | Home</title>
+  <meta name="description" content="Portal editorial com curadoria de ferramentas, educação, design, idiomas, música e recursos técnicos.">
+  <title>Hub | Curadoria Digital</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body data-page="home">
@@ -24,7 +24,6 @@
         <a href="idiomas.html">Idiomas</a>
         <a href="automotivo.html">Automotivo</a>
         <a href="outros.html">Outros</a>
-        <a href="privado.html">Privado</a>
       </nav>
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
         <span></span>
@@ -38,12 +37,29 @@
     <section class="hero home-hero">
       <div class="hero-overlay"></div>
       <div class="hero-content container">
-        <span class="hero-kicker">Hub profissional</span>
-        <h1>Explore links úteis em um dashboard premium</h1>
-        <p>Um catálogo elegante para estudar, criar, organizar ferramentas e navegar por categorias com a fluidez de uma interface estilo Netflix.</p>
+        <span class="hero-kicker">Curadoria digital</span>
+        <h1>Um portal profissional para descobrir recursos realmente úteis</h1>
+        <p>O Hub organiza ferramentas, plataformas de estudo e recursos criativos em trilhas claras. Em vez de apenas apontar links, o foco aqui é contexto, utilidade prática e navegação limpa.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#acesso-rapido">Explorar agora</a>
-          <a class="btn btn-secondary" href="privado.html">Privado</a>
+          <a class="btn btn-primary" href="#acesso-rapido">Explorar categorias</a>
+          <a class="btn btn-secondary" href="sobre.html">Entender a proposta</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="editorial-strip">
+      <div class="container editorial-strip-inner">
+        <div>
+          <strong>Curadoria independente</strong>
+          <p>Selecionamos recursos externos com base em utilidade, clareza de proposta e valor prático para estudo, trabalho e criação.</p>
+        </div>
+        <div>
+          <strong>Experiência limpa</strong>
+          <p>Organização por categorias, textos de apoio e navegação simples para ajudar você a decidir o que explorar primeiro.</p>
+        </div>
+        <div>
+          <strong>Expansão contínua</strong>
+          <p>O portal foi desenhado para crescer com novas páginas editoriais, comparativos, guias e curadorias aprofundadas.</p>
         </div>
       </div>
     </section>
@@ -51,18 +67,28 @@
     <section class="quick-access container" id="acesso-rapido">
       <div class="section-heading">
         <span class="section-tag">Categorias</span>
-        <h2>Acesso Rápido</h2>
+        <h2>Acesso rápido</h2>
+        <p class="section-copy">Entre pelas trilhas que mais combinam com sua rotina. Cada área foi organizada com foco em uso real e valor prático.</p>
       </div>
       <div class="quick-grid" data-quick-grid></div>
+    </section>
+
+    <section class="insight-section container">
+      <div class="section-heading">
+        <span class="section-tag">Metodologia</span>
+        <h2>Como o Hub foi estruturado</h2>
+        <p class="section-copy">A parte pública do projeto foi reorganizada para oferecer contexto, hierarquia de navegação e valor editorial acima de simples redirecionamento.</p>
+      </div>
+      <div class="insight-grid" data-feature-grid></div>
     </section>
 
     <section class="carousel-section container">
       <div class="section-heading row-heading">
         <div>
-          <span class="section-tag">Catálogo</span>
+          <span class="section-tag">Seleção</span>
           <h2>Educação</h2>
         </div>
-        <a href="educacao.html" class="section-link">Ver tudo</a>
+        <a href="educacao.html" class="section-link">Ver categoria</a>
       </div>
       <div class="carousel-shell">
         <button class="carousel-btn prev" type="button" aria-label="Voltar itens"><span>&lsaquo;</span></button>
@@ -74,25 +100,10 @@
     <section class="carousel-section container">
       <div class="section-heading row-heading">
         <div>
-          <span class="section-tag">Catálogo</span>
-          <h2>Jogos</h2>
-        </div>
-        <a href="jogos.html" class="section-link">Ver tudo</a>
-      </div>
-      <div class="carousel-shell">
-        <button class="carousel-btn prev" type="button" aria-label="Voltar itens"><span>&lsaquo;</span></button>
-        <div class="card-row" data-category="jogos"></div>
-        <button class="carousel-btn next" type="button" aria-label="Avançar itens"><span>&rsaquo;</span></button>
-      </div>
-    </section>
-
-    <section class="carousel-section container">
-      <div class="section-heading row-heading">
-        <div>
-          <span class="section-tag">Catálogo</span>
+          <span class="section-tag">Seleção</span>
           <h2>Ferramentas</h2>
         </div>
-        <a href="ferramentas.html" class="section-link">Ver tudo</a>
+        <a href="ferramentas.html" class="section-link">Ver categoria</a>
       </div>
       <div class="carousel-shell">
         <button class="carousel-btn prev" type="button" aria-label="Voltar itens"><span>&lsaquo;</span></button>
@@ -104,10 +115,10 @@
     <section class="carousel-section container">
       <div class="section-heading row-heading">
         <div>
-          <span class="section-tag">Catálogo</span>
+          <span class="section-tag">Seleção</span>
           <h2>Design</h2>
         </div>
-        <a href="design.html" class="section-link">Ver tudo</a>
+        <a href="design.html" class="section-link">Ver categoria</a>
       </div>
       <div class="carousel-shell">
         <button class="carousel-btn prev" type="button" aria-label="Voltar itens"><span>&lsaquo;</span></button>
@@ -119,10 +130,10 @@
     <section class="carousel-section container">
       <div class="section-heading row-heading">
         <div>
-          <span class="section-tag">Catálogo</span>
+          <span class="section-tag">Seleção</span>
           <h2>Música</h2>
         </div>
-        <a href="musica.html" class="section-link">Ver tudo</a>
+        <a href="musica.html" class="section-link">Ver categoria</a>
       </div>
       <div class="carousel-shell">
         <button class="carousel-btn prev" type="button" aria-label="Voltar itens"><span>&lsaquo;</span></button>
@@ -130,55 +141,29 @@
         <button class="carousel-btn next" type="button" aria-label="Avançar itens"><span>&rsaquo;</span></button>
       </div>
     </section>
-
-    <section class="carousel-section container">
-      <div class="section-heading row-heading">
-        <div>
-          <span class="section-tag">Catálogo</span>
-          <h2>Idiomas</h2>
-        </div>
-        <a href="idiomas.html" class="section-link">Ver tudo</a>
-      </div>
-      <div class="carousel-shell">
-        <button class="carousel-btn prev" type="button" aria-label="Voltar itens"><span>&lsaquo;</span></button>
-        <div class="card-row" data-category="idiomas"></div>
-        <button class="carousel-btn next" type="button" aria-label="Avançar itens"><span>&rsaquo;</span></button>
-      </div>
-    </section>
-
-    <section class="carousel-section container">
-      <div class="section-heading row-heading">
-        <div>
-          <span class="section-tag">Catálogo</span>
-          <h2>Automotivo</h2>
-        </div>
-        <a href="automotivo.html" class="section-link">Ver tudo</a>
-      </div>
-      <div class="carousel-shell">
-        <button class="carousel-btn prev" type="button" aria-label="Voltar itens"><span>&lsaquo;</span></button>
-        <div class="card-row" data-category="automotivo"></div>
-        <button class="carousel-btn next" type="button" aria-label="Avançar itens"><span>&rsaquo;</span></button>
-      </div>
-    </section>
-
-    <section class="carousel-section container">
-      <div class="section-heading row-heading">
-        <div>
-          <span class="section-tag">Catálogo</span>
-          <h2>Outros</h2>
-        </div>
-        <a href="outros.html" class="section-link">Ver tudo</a>
-      </div>
-      <div class="carousel-shell">
-        <button class="carousel-btn prev" type="button" aria-label="Voltar itens"><span>&lsaquo;</span></button>
-        <div class="card-row" data-category="outros"></div>
-        <button class="carousel-btn next" type="button" aria-label="Avançar itens"><span>&rsaquo;</span></button>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
-    <p>Hub profissional com visual inspirado em streaming, tema escuro fixo e estrutura pronta para crescer.</p>
+    <div class="container footer-grid">
+      <div>
+        <strong>Hub</strong>
+        <p>Curadoria digital independente para estudo, produtividade, criatividade e pesquisa.</p>
+      </div>
+      <div>
+        <strong>Institucional</strong>
+        <a href="sobre.html">Sobre</a>
+        <a href="politica-privacidade.html">Política de Privacidade</a>
+        <a href="termos.html">Termos de Uso</a>
+        <a href="contato.html">Contato</a>
+      </div>
+      <div>
+        <strong>Explorar</strong>
+        <a href="educacao.html">Educação</a>
+        <a href="ferramentas.html">Ferramentas</a>
+        <a href="design.html">Design</a>
+        <a href="automotivo.html">Automotivo</a>
+      </div>
+    </div>
   </footer>
 
   <script src="script.js"></script>
