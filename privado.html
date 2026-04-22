@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Area privada local do Hub para links pessoais preenchidos manualmente.">
+  <title>Hub | Privado</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="privado">
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a class="logo" href="index.html">Hub</a>
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="educacao.html">Educação</a>
+        <a href="jogos.html">Jogos</a>
+        <a href="ferramentas.html">Ferramentas</a>
+        <a href="design.html">Design</a>
+        <a href="musica.html">Música</a>
+        <a href="idiomas.html">Idiomas</a>
+        <a href="automotivo.html">Automotivo</a>
+        <a href="outros.html">Outros</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="inner-page">
+    <section class="page-hero category-ferramentas">
+      <div class="page-hero-overlay"></div>
+      <div class="container page-hero-content">
+        <span class="section-tag">Area Local</span>
+        <h1>Espaco privado</h1>
+        <p>Pagina local separada para seus links pessoais. Edite a senha no JavaScript e preencha os itens no arquivo dedicado.</p>
+      </div>
+    </section>
+
+    <section class="category-section container">
+      <div class="private-panel" data-private-locked>
+        <div class="section-heading">
+          <span class="section-tag">Acesso</span>
+          <h2>Desbloquear area privada</h2>
+        </div>
+        <p class="private-copy">Use sua senha local para abrir os links pessoais salvos em `links-privados.js`.</p>
+        <form class="private-form" data-private-form>
+          <input class="private-input" data-private-password type="password" placeholder="Digite sua senha local" autocomplete="current-password">
+          <button class="btn btn-primary" type="submit">Desbloquear</button>
+        </form>
+        <p class="private-feedback" data-private-feedback></p>
+      </div>
+
+      <div class="hidden" data-private-unlocked>
+        <div class="section-heading row-heading">
+          <div>
+            <span class="section-tag">Privado</span>
+            <h2>Seus links locais</h2>
+          </div>
+          <button class="private-lock" type="button" data-private-lock>Bloquear</button>
+        </div>
+        <p class="private-copy" data-private-count>0 links disponiveis</p>
+        <div class="category-grid" data-private-grid></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Pagina privada local para uso pessoal nesta maquina.</p>
+  </footer>
+
+  <script src="links-privados.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

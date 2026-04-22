@@ -1,5 +1,7 @@
 const MODO_SITE = "pessoal";
 // opcoes: "pessoal" ou "publico"
+const SENHA_PRIVADA_LOCAL = "altere-esta-senha";
+const CHAVE_PRIVADA_LOCAL = "hub-privado-liberado";
 
 // Dados organizados por categoria para montar a home e as páginas internas.
 const hubData = {
@@ -122,6 +124,15 @@ function getVisibleItems(category) {
   return category.items.filter(shouldDisplayItem);
 }
 
+function getPrivateLinks() {
+  const source = window.privateLinksData;
+  if (!Array.isArray(source)) {
+    return [];
+  }
+
+  return source.filter((item) => item && item.name && item.description && item.url);
+}
+
 function createCard(item, buttonLabel = "Acessar") {
   const article = document.createElement("article");
   article.className = "content-card";
@@ -159,6 +170,76 @@ function createCard(item, buttonLabel = "Acessar") {
   content.append(title, description, actions);
   article.append(art, content);
   return article;
+}
+
+function populatePrivatePage() {
+  if (document.body.dataset.page !== "privado") {
+    return;
+  }
+
+  const unlockForm = document.querySelector("[data-private-form]");
+  const passwordInput = document.querySelector("[data-private-password]");
+  const feedback = document.querySelector("[data-private-feedback]");
+  const lockedState = document.querySelector("[data-private-locked]");
+  const unlockedState = document.querySelector("[data-private-unlocked]");
+  const privateGrid = document.querySelector("[data-private-grid]");
+  const privateCount = document.querySelector("[data-private-count]");
+  const privateLinks = getPrivateLinks();
+
+  const renderPrivateLinks = () => {
+    if (!privateGrid) return;
+    privateGrid.innerHTML = "";
+
+    privateLinks.forEach((item, index) => {
+      privateGrid.appendChild(createCard({ ...item, delay: index * 70 }));
+    });
+
+    if (privateCount) {
+      privateCount.textContent = `${privateLinks.length} link${privateLinks.length === 1 ? "" : "s"} disponivel${privateLinks.length === 1 ? "" : "is"}`;
+    }
+  };
+
+  const setUnlockedState = (isUnlocked) => {
+    lockedState?.classList.toggle("hidden", isUnlocked);
+    unlockedState?.classList.toggle("hidden", !isUnlocked);
+  };
+
+  const isUnlocked = localStorage.getItem(CHAVE_PRIVADA_LOCAL) === "true";
+  setUnlockedState(isUnlocked);
+  if (isUnlocked) {
+    renderPrivateLinks();
+  }
+
+  unlockForm?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!passwordInput) return;
+
+    if (passwordInput.value === SENHA_PRIVADA_LOCAL) {
+      localStorage.setItem(CHAVE_PRIVADA_LOCAL, "true");
+      setUnlockedState(true);
+      renderPrivateLinks();
+      if (feedback) {
+        feedback.textContent = "Area privada liberada neste navegador.";
+      }
+      passwordInput.value = "";
+      return;
+    }
+
+    if (feedback) {
+      feedback.textContent = "Senha incorreta. Atualize a constante local para a sua senha.";
+    }
+  });
+
+  document.querySelector("[data-private-lock]")?.addEventListener("click", () => {
+    localStorage.removeItem(CHAVE_PRIVADA_LOCAL);
+    setUnlockedState(false);
+    if (privateGrid) {
+      privateGrid.innerHTML = "";
+    }
+    if (feedback) {
+      feedback.textContent = "Area privada bloqueada novamente.";
+    }
+  });
 }
 
 function getVisibleCategories() {
@@ -282,6 +363,7 @@ document.addEventListener("DOMContentLoaded", () => {
   populateQuickAccess();
   populateCategoryRows();
   populateCategoryPage();
+  populatePrivatePage();
   setupNavbar();
   setupCarousels();
 });
