@@ -234,6 +234,9 @@ button {
 
 .hero-actions {
   margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
 }
 
 .btn {
@@ -255,6 +258,16 @@ button {
 .btn-primary {
   background: var(--accent);
   color: #ffffff;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.14);
 }
 
 .quick-access,
