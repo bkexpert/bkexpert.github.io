@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Hub pessoal de links úteis com visual moderno e responsivo inspirado na Netflix.">
+  <meta name="description" content="Hub profissional com categorias organizadas, visual estilo Netflix e tema claro ou escuro.">
   <title>Hub | Home</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,29 +14,36 @@
   <header class="navbar" id="navbar">
     <div class="nav-inner">
       <a class="logo" href="index.html">Hub</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Alternar tema">🌙</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
       <nav class="nav-menu" id="navMenu">
         <a href="index.html" class="active">Home</a>
-        <a href="entretenimento.html">Entretenimento</a>
         <a href="educacao.html">Educação</a>
-        <a href="utilidades.html">Utilidades</a>
-        <a href="tecnologia.html">Tecnologia</a>
-        <a href="criatividade-apps.html">Criatividade e Apps</a>
+        <a href="entretenimento.html">Entretenimento</a>
+        <a href="jogos.html">Jogos</a>
+        <a href="ferramentas.html">Ferramentas</a>
+        <a href="design.html">Design</a>
+        <a href="musica.html">Música</a>
+        <a href="idiomas.html">Idiomas</a>
+        <a href="automotivo.html">Automotivo</a>
+        <a href="outros.html">Outros</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero home-hero">
       <div class="hero-overlay"></div>
       <div class="hero-content container">
-        <span class="hero-kicker">Hub digital premium</span>
-        <h1>Sua central de ferramentas da internet</h1>
-        <p>Descubra plataformas úteis, criativas e práticas em uma experiência visual elegante, rápida e intuitiva.</p>
+        <span class="hero-kicker">Hub profissional</span>
+        <h1>Explore links úteis em um dashboard premium</h1>
+        <p>Um catálogo elegante para estudar, criar, organizar ferramentas e navegar por categorias com a fluidez de uma interface estilo Netflix.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#acesso-rapido">Explorar agora</a>
         </div>
@@ -45,30 +52,24 @@
 
     <section class="quick-access container" id="acesso-rapido">
       <div class="section-heading">
-        <span class="section-tag">Atalhos</span>
+        <span class="section-tag">Categorias</span>
         <h2>Acesso Rápido</h2>
       </div>
-      <div class="quick-grid">
-        <a class="quick-card entertainment" href="entretenimento.html">
-          <span class="quick-label">Entretenimento</span>
-          <strong>Mangás, motion design e ferramentas criativas</strong>
-        </a>
-        <a class="quick-card education" href="educacao.html">
-          <span class="quick-label">Educação</span>
-          <strong>Cursos, idiomas, matemática e simuladores</strong>
-        </a>
-        <a class="quick-card utilities" href="utilidades.html">
-          <span class="quick-label">Utilidades</span>
-          <strong>Ferramentas para mídia, design e produtividade</strong>
-        </a>
-        <a class="quick-card technology" href="tecnologia.html">
-          <span class="quick-label">Tecnologia</span>
-          <strong>Softwares, reparos, tuning e escritório online</strong>
-        </a>
-        <a class="quick-card creativity" href="criatividade-apps.html">
-          <span class="quick-label">Criatividade e Apps</span>
-          <strong>Apps criativos, animações e ferramentas visuais</strong>
-        </a>
+      <div class="quick-grid" data-quick-grid></div>
+    </section>
+
+    <section class="carousel-section container">
+      <div class="section-heading row-heading">
+        <div>
+          <span class="section-tag">Catálogo</span>
+          <h2>Educação</h2>
+        </div>
+        <a href="educacao.html" class="section-link">Ver tudo</a>
+      </div>
+      <div class="carousel-shell">
+        <button class="carousel-btn prev" type="button" aria-label="Voltar itens"><span>&lsaquo;</span></button>
+        <div class="card-row" data-category="educacao"></div>
+        <button class="carousel-btn next" type="button" aria-label="Avançar itens"><span>&rsaquo;</span></button>
       </div>
     </section>
 
@@ -91,13 +92,13 @@
       <div class="section-heading row-heading">
         <div>
           <span class="section-tag">Catálogo</span>
-          <h2>Educação</h2>
+          <h2>Jogos</h2>
         </div>
-        <a href="educacao.html" class="section-link">Ver tudo</a>
+        <a href="jogos.html" class="section-link">Ver tudo</a>
       </div>
       <div class="carousel-shell">
         <button class="carousel-btn prev" type="button" aria-label="Voltar itens"><span>&lsaquo;</span></button>
-        <div class="card-row" data-category="educacao"></div>
+        <div class="card-row" data-category="jogos"></div>
         <button class="carousel-btn next" type="button" aria-label="Avançar itens"><span>&rsaquo;</span></button>
       </div>
     </section>
@@ -106,13 +107,13 @@
       <div class="section-heading row-heading">
         <div>
           <span class="section-tag">Catálogo</span>
-          <h2>Utilidades</h2>
+          <h2>Ferramentas</h2>
         </div>
-        <a href="utilidades.html" class="section-link">Ver tudo</a>
+        <a href="ferramentas.html" class="section-link">Ver tudo</a>
       </div>
       <div class="carousel-shell">
         <button class="carousel-btn prev" type="button" aria-label="Voltar itens"><span>&lsaquo;</span></button>
-        <div class="card-row" data-category="utilidades"></div>
+        <div class="card-row" data-category="ferramentas"></div>
         <button class="carousel-btn next" type="button" aria-label="Avançar itens"><span>&rsaquo;</span></button>
       </div>
     </section>
@@ -121,13 +122,13 @@
       <div class="section-heading row-heading">
         <div>
           <span class="section-tag">Catálogo</span>
-          <h2>Tecnologia</h2>
+          <h2>Design</h2>
         </div>
-        <a href="tecnologia.html" class="section-link">Ver tudo</a>
+        <a href="design.html" class="section-link">Ver tudo</a>
       </div>
       <div class="carousel-shell">
         <button class="carousel-btn prev" type="button" aria-label="Voltar itens"><span>&lsaquo;</span></button>
-        <div class="card-row" data-category="tecnologia"></div>
+        <div class="card-row" data-category="design"></div>
         <button class="carousel-btn next" type="button" aria-label="Avançar itens"><span>&rsaquo;</span></button>
       </div>
     </section>
@@ -136,20 +137,65 @@
       <div class="section-heading row-heading">
         <div>
           <span class="section-tag">Catálogo</span>
-          <h2>Criatividade e Apps</h2>
+          <h2>Música</h2>
         </div>
-        <a href="criatividade-apps.html" class="section-link">Ver tudo</a>
+        <a href="musica.html" class="section-link">Ver tudo</a>
       </div>
       <div class="carousel-shell">
         <button class="carousel-btn prev" type="button" aria-label="Voltar itens"><span>&lsaquo;</span></button>
-        <div class="card-row" data-category="criatividade"></div>
+        <div class="card-row" data-category="musica"></div>
+        <button class="carousel-btn next" type="button" aria-label="Avançar itens"><span>&rsaquo;</span></button>
+      </div>
+    </section>
+
+    <section class="carousel-section container">
+      <div class="section-heading row-heading">
+        <div>
+          <span class="section-tag">Catálogo</span>
+          <h2>Idiomas</h2>
+        </div>
+        <a href="idiomas.html" class="section-link">Ver tudo</a>
+      </div>
+      <div class="carousel-shell">
+        <button class="carousel-btn prev" type="button" aria-label="Voltar itens"><span>&lsaquo;</span></button>
+        <div class="card-row" data-category="idiomas"></div>
+        <button class="carousel-btn next" type="button" aria-label="Avançar itens"><span>&rsaquo;</span></button>
+      </div>
+    </section>
+
+    <section class="carousel-section container">
+      <div class="section-heading row-heading">
+        <div>
+          <span class="section-tag">Catálogo</span>
+          <h2>Automotivo</h2>
+        </div>
+        <a href="automotivo.html" class="section-link">Ver tudo</a>
+      </div>
+      <div class="carousel-shell">
+        <button class="carousel-btn prev" type="button" aria-label="Voltar itens"><span>&lsaquo;</span></button>
+        <div class="card-row" data-category="automotivo"></div>
+        <button class="carousel-btn next" type="button" aria-label="Avançar itens"><span>&rsaquo;</span></button>
+      </div>
+    </section>
+
+    <section class="carousel-section container">
+      <div class="section-heading row-heading">
+        <div>
+          <span class="section-tag">Catálogo</span>
+          <h2>Outros</h2>
+        </div>
+        <a href="outros.html" class="section-link">Ver tudo</a>
+      </div>
+      <div class="carousel-shell">
+        <button class="carousel-btn prev" type="button" aria-label="Voltar itens"><span>&lsaquo;</span></button>
+        <div class="card-row" data-category="outros"></div>
         <button class="carousel-btn next" type="button" aria-label="Avançar itens"><span>&rsaquo;</span></button>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>Hub pessoal de links úteis. Design responsivo com navegação rápida e visual premium.</p>
+    <p>Hub profissional com visual inspirado em streaming, tema claro ou escuro e estrutura pronta para crescer.</p>
   </footer>
 
   <script src="script.js"></script>

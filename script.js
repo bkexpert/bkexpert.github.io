@@ -1,60 +1,104 @@
-// Fonte única de dados para preencher a home e as páginas internas.
+// Dados organizados por categoria para montar a home e as páginas internas.
 const hubData = {
-  entretenimento: {
-    items: [
-      { name: "MangaDex", description: "Leia mangás e explore coleções em uma comunidade ampla e ativa.", url: "https://mangadex.org", image: "url('https://images.unsplash.com/photo-1618336753974-aae8e04506aa?auto=format&fit=crop&w=800&q=80')" },
-      { name: "Jitter", description: "Crie animações com IA e motion design de forma visual e intuitiva.", url: "https://jitter.video", image: "url('https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80')" }
-    ]
-  },
   educacao: {
+    title: "Educação",
+    description: "Cursos, programação e apps úteis para aprender com mais profundidade.",
+    page: "educacao.html",
     items: [
-      { name: "Santander Open Academy", description: "Cursos gratuitos e trilhas de desenvolvimento pessoal e profissional.", url: "https://www.santanderopenacademy.com", image: "url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80')" },
-      { name: "Kultivi", description: "Cursos online gratuitos em áreas populares com acesso simples.", url: "https://kultivi.com", image: "url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80')" },
-      { name: "PUCRS Online", description: "Conteúdo acadêmico e cursos abertos para ampliar seus estudos.", url: "https://www.pucrsonline.com.br", image: "url('https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?auto=format&fit=crop&w=800&q=80')" },
-      { name: "Aprenda Mais MEC", description: "Portal com cursos gratuitos e conteúdos voltados para capacitação.", url: "https://aprendamais.mec.gov.br", image: "url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80')" },
-      { name: "Loecsen", description: "Aprenda idiomas com frases práticas, áudio e navegação direta.", url: "https://www.loecsen.com/pt", image: "url('https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80')" },
-      { name: "Cymath", description: "Resolva expressões matemáticas com apoio visual e passo a passo.", url: "https://www.cymath.com", image: "url('https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=800&q=80')" },
-      { name: "Muted", description: "Ferramenta excelente para teoria musical e experimentos sonoros.", url: "https://muted.io", image: "url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=800&q=80')" },
-      { name: "Electude Simulator", description: "Simulador técnico para praticar conceitos de forma interativa.", url: "https://simulator.electude.com", image: "url('https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=800&q=80')" },
-      { name: "Class Central", description: "Encontre cursos gratuitos e trilhas de aprendizado de várias instituições.", url: "https://www.classcentral.com", image: "url('https://images.unsplash.com/photo-1516321310766-d5be7c8f0b3f?auto=format&fit=crop&w=800&q=80')" },
-      { name: "Lingua", description: "Pratique leitura, vocabulário e compreensão em vários idiomas.", url: "https://lingua.com", image: "url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80')" },
-      { name: "Musicca", description: "Aprenda teoria musical com exercícios e lições interativas.", url: "https://www.musicca.com", image: "url('https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=800&q=80')" },
-      { name: "WikiHow", description: "Guias práticos para aprender tarefas do dia a dia em português.", url: "https://pt.wikihow.com", image: "url('https://images.unsplash.com/photo-1456406644174-8ddd4cd52a06?auto=format&fit=crop&w=800&q=80')" }
+      { name: "Cursos ENAP", description: "Cursos gratuitos do governo", url: "https://www.enap.gov.br", image: "url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80')" },
+      { name: "Santander Open Academy", description: "Cursos com certificado", url: "https://www.santanderopenacademy.com", image: "url('https://images.unsplash.com/photo-1516321310766-d5be7c8f0b3f?auto=format&fit=crop&w=900&q=80')" },
+      { name: "Kultivi", description: "Cursos online gratuitos", url: "https://kultivi.com", image: "url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80')" },
+      { name: "PUCRS Online", description: "Cursos universitários", url: "https://online.pucrs.br", image: "url('https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?auto=format&fit=crop&w=900&q=80')" },
+      { name: "MEC Aprenda Mais", description: "Cursos públicos", url: "https://www.gov.br/mec", image: "url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80')" },
+      { name: "Class Central", description: "Agregador de cursos", url: "https://www.classcentral.com", image: "url('https://images.unsplash.com/photo-1456406644174-8ddd4cd52a06?auto=format&fit=crop&w=900&q=80')" },
+      { name: "WikiHow", description: "Tutoriais diversos", url: "https://pt.wikihow.com", image: "url('https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=80')" },
+      { name: "Coddy", description: "Aprender programação", url: "https://coddy.tech", image: "url('https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=900&q=80')" },
+      { name: "Replit", description: "Programar online", url: "https://replit.com", image: "url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=80')" },
+      { name: "Emergent", description: "Criar aplicativos", url: "https://app.emergent.sh", image: "url('https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=900&q=80')" }
     ]
   },
-  utilidades: {
+  entretenimento: {
+    title: "Entretenimento",
+    description: "Categoria reservada para filmes, séries e streaming.",
+    page: "entretenimento.html",
+    items: []
+  },
+  jogos: {
+    title: "Jogos",
+    description: "Jogos, bibliotecas e organização da sua coleção.",
+    page: "jogos.html",
     items: [
-      { name: "Neamx", description: "Crie thumbnails com mais impacto para vídeos e redes sociais.", url: "https://neamx.com", image: "url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80')" },
-      { name: "Wayin AI", description: "Ferramenta para gerar cortes de vídeo de forma rápida e prática.", url: "https://wayin.ai", image: "url('https://images.unsplash.com/photo-1574717024453-3540568b541d?auto=format&fit=crop&w=800&q=80')" },
-      { name: "Photext", description: "Edite textos dentro de imagens sem complicação e com agilidade.", url: "https://photext.shop", image: "url('https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=800&q=80')" },
-      { name: "Image Upscaling", description: "Melhore a qualidade de imagens com poucos cliques e bom resultado.", url: "https://image-upscaling.net", image: "url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=800&q=80')" },
-      { name: "Space Type Generator", description: "Crie animações de texto com estética moderna e visual marcante.", url: "https://spacetypegenerator.com", image: "url('https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&w=800&q=80')" },
-      { name: "Workout Cool", description: "Personal trainer digital com rotinas e sugestões para treinar melhor.", url: "https://workout.cool/pt", image: "url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=800&q=80')" },
-      { name: "LightPDF", description: "Editor de PDF online com conversão, assinatura e ajustes rápidos.", url: "https://lightpdf.com", image: "url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80')" },
-      { name: "MyFridgeFood", description: "Descubra receitas com os ingredientes que você já tem em casa.", url: "https://www.myfridgefood.com", image: "url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=800&q=80')" },
-      { name: "PNGIMG", description: "Biblioteca com imagens PNG gratuitas para projetos e apresentações.", url: "https://pngimg.com", image: "url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80')" },
-      { name: "TGStat", description: "Busque e analise canais, posts e tendências públicas do Telegram.", url: "https://tgstat.com", image: "url('https://images.unsplash.com/photo-1611746872915-64382b5c76da?auto=format&fit=crop&w=800&q=80')" }
+      { name: "Playnite", description: "Gerenciador de jogos", url: "https://playnite.link", image: "url('https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=900&q=80')" }
     ]
   },
-  tecnologia: {
+  ferramentas: {
+    title: "Ferramentas",
+    description: "Utilitários online e apps práticos para produtividade técnica.",
+    page: "ferramentas.html",
     items: [
-      { name: "Ninite", description: "Instale vários programas essenciais de uma vez com praticidade.", url: "https://ninite.com", image: "url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=80')" },
-      { name: "Geelark", description: "Solução de celular virtual para testes, operação e produtividade.", url: "https://www.geelark.com", image: "url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80')" },
-      { name: "CarCareKiosk", description: "Guias automotivos úteis para manutenção e cuidados com veículos.", url: "https://www.carcarekiosk.com", image: "url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=800&q=80')" },
-      { name: "iFixit", description: "Tutoriais de reparo para dispositivos, peças e manutenção técnica.", url: "https://pt.ifixit.com", image: "url('https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?auto=format&fit=crop&w=800&q=80')" },
-      { name: "3DTuning", description: "Customize carros com visual interativo e muitas possibilidades.", url: "https://www.3dtuning.com", image: "url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80')" },
-      { name: "ONLYOFFICE", description: "Suíte office online para editar documentos com rapidez e colaboração.", url: "https://www.onlyoffice.com", image: "url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80')" },
-      { name: "Geek Uninstaller", description: "Remova programas de forma rápida e leve sem depender de suites pesadas.", url: "https://geekuninstaller.com/download", image: "url('https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=800&q=80')" },
-      { name: "Emergent", description: "Crie aplicativos e protótipos com ajuda de IA diretamente no navegador.", url: "https://app.emergent.sh", image: "url('https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800&q=80')" },
-      { name: "Playnite", description: "Gerenciador de jogos para organizar bibliotecas em uma interface única.", url: "https://playnite.link", image: "url('https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=800&q=80')" },
-      { name: "NotebookLM", description: "IA do Google para resumir, organizar e explorar documentos e notas.", url: "https://notebooklm.google", image: "url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80')" },
-      { name: "Arena IA", description: "Compare diferentes IAs e veja resultados lado a lado com rapidez.", url: "https://arena.ia", image: "url('https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80')" }
+      { name: "Ninite", description: "Instalar programas", url: "https://ninite.com", image: "url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=80')" },
+      { name: "Geek Uninstaller", description: "Remover programas", url: "https://geekuninstaller.com", image: "url('https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=900&q=80')" },
+      { name: "OnlyOffice", description: "Office gratuito", url: "https://www.onlyoffice.com", image: "url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80')" },
+      { name: "LightPDF", description: "Editor PDF", url: "https://lightpdf.com", image: "url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=80')" },
+      { name: "Cymath", description: "Resolver matemática", url: "https://www.cymath.com", image: "url('https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=900&q=80')" },
+      { name: "NotebookLM", description: "IA de estudos", url: "https://notebooklm.google", image: "url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=900&q=80')" },
+      { name: "TGStat", description: "Conteúdo Telegram", url: "https://tgstat.com", image: "url('https://images.unsplash.com/photo-1611746872915-64382b5c76da?auto=format&fit=crop&w=900&q=80')" },
+      { name: "Arena IA", description: "Comparar IA", url: "https://arena.ia", image: "url('https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80')" }
     ]
   },
-  criatividade: {
+  design: {
+    title: "Design",
+    description: "Criação visual, imagens, cortes e materiais gráficos.",
+    page: "design.html",
     items: [
-      { name: "Creative Conor", description: "Coleção de aplicativos úteis e criativos para projetos digitais.", url: "https://creativeconor.com", image: "url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=800&q=80')" },
-      { name: "Swishy AI", description: "Crie animações grátis com fluxo rápido e interface acessível.", url: "https://www.swishy.ai", image: "url('https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=800&q=80')" }
+      { name: "Recraft AI", description: "Criar posts", url: "https://www.recraft.ai", image: "url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=900&q=80')" },
+      { name: "Wayin AI", description: "Cortes de vídeo", url: "https://wayin.ai", image: "url('https://images.unsplash.com/photo-1574717024453-3540568b541d?auto=format&fit=crop&w=900&q=80')" },
+      { name: "Neamx", description: "Thumbs", url: "https://neamx.com", image: "url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80')" },
+      { name: "Photext", description: "Editar imagens", url: "https://photext.shop", image: "url('https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=900&q=80')" },
+      { name: "Image Upscaling", description: "Melhorar imagens", url: "https://image-upscaling.net", image: "url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=900&q=80')" },
+      { name: "PNGIMG", description: "PNG sem fundo", url: "https://pngimg.com", image: "url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80')" }
+    ]
+  },
+  musica: {
+    title: "Música",
+    description: "Teoria, prática e ferramentas para estudar ou criar música.",
+    page: "musica.html",
+    items: [
+      { name: "Moises", description: "Separar música", url: "https://www.splitmysong.com", image: "url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=900&q=80')" },
+      { name: "HookTheory", description: "Teoria musical", url: "https://www.hooktheory.com", image: "url('https://images.unsplash.com/photo-1507838153414-b4b713384a76?auto=format&fit=crop&w=900&q=80')" },
+      { name: "Muted", description: "Aprender música", url: "https://muted.io", image: "url('https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=900&q=80')" },
+      { name: "Musicca", description: "Ferramentas musicais", url: "https://www.musicca.com", image: "url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=900&q=80')" }
+    ]
+  },
+  idiomas: {
+    title: "Idiomas",
+    description: "Prática de idiomas com leitura, frases e exercícios.",
+    page: "idiomas.html",
+    items: [
+      { name: "Loecsen", description: "Idiomas", url: "https://www.loecsen.com", image: "url('https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=80')" },
+      { name: "Lingua", description: "Exercícios", url: "https://lingua.com", image: "url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=900&q=80')" }
+    ]
+  },
+  automotivo: {
+    title: "Automotivo",
+    description: "Conteúdo técnico, reparos, simuladores e customização.",
+    page: "automotivo.html",
+    items: [
+      { name: "Opinautos", description: "Info automotiva", url: "https://www.opinautos.com.br", image: "url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=80')" },
+      { name: "CarCareKiosk", description: "Tutoriais", url: "https://www.carcarekiosk.com", image: "url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80')" },
+      { name: "Electude", description: "Simulador", url: "https://simulator.electude.com", image: "url('https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=900&q=80')" },
+      { name: "iFixit", description: "Reparos", url: "https://pt.ifixit.com", image: "url('https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?auto=format&fit=crop&w=900&q=80')" },
+      { name: "3DTuning", description: "Customização", url: "https://www.3dtuning.com", image: "url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80')" }
+    ]
+  },
+  outros: {
+    title: "Outros",
+    description: "Links complementares para cartões, mods e animação de texto.",
+    page: "outros.html",
+    items: [
+      { name: "Neapay", description: "Cartões virtuais", url: "https://neapay.com", image: "url('https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=900&q=80')" },
+      { name: "Wand", description: "Mods", url: "https://wand.com", image: "url('https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=900&q=80')" },
+      { name: "Spacetype Generator", description: "Texto animado", url: "https://spacetypegenerator.com", image: "url('https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&w=900&q=80')" }
     ]
   }
 };
@@ -98,19 +142,64 @@ function createCard(item, buttonLabel = "Acessar") {
   return article;
 }
 
-function populateCards(selector, attribute) {
-  document.querySelectorAll(selector).forEach((container) => {
-    const key = container.dataset[attribute];
+function createEmptyCard(message) {
+  const card = document.createElement("article");
+  card.className = "content-card empty-card";
+  card.innerHTML = `<div class="card-content"><h3 class="card-title">Em atualização</h3><p class="card-description">${message}</p></div>`;
+  return card;
+}
+
+function populateCategoryRows() {
+  document.querySelectorAll("[data-category]").forEach((container) => {
+    const key = container.dataset.category;
     const category = hubData[key];
     if (!category) return;
 
-    const uniqueItems = category.items.filter((item, index, list) => (
-      list.findIndex((entry) => entry.url === item.url) === index
-    ));
+    if (!category.items.length) {
+      container.appendChild(createEmptyCard("Esta categoria segue reservada para itens que eu não posso incorporar diretamente nesta versão."));
+      return;
+    }
 
-    uniqueItems.forEach((item, index) => {
-      container.appendChild(createCard({ ...item, delay: index * 70 }, selector === "[data-category]" ? "Abrir link" : "Acessar"));
+    category.items.forEach((item, index) => {
+      container.appendChild(createCard({ ...item, delay: index * 70 }, "Abrir link"));
     });
+  });
+}
+
+function populateCategoryPage() {
+  const pageKey = document.body.dataset.page;
+  const pageGrid = document.querySelector("[data-grid]");
+  const pageTitle = document.querySelector("[data-page-title]");
+  const pageDescription = document.querySelector("[data-page-description]");
+  const pageBadge = document.querySelector("[data-page-badge]");
+
+  const category = hubData[pageKey];
+  if (!pageGrid || !category) return;
+
+  if (pageTitle) pageTitle.textContent = category.title;
+  if (pageDescription) pageDescription.textContent = category.description;
+  if (pageBadge) pageBadge.textContent = category.title;
+
+  if (!category.items.length) {
+    pageGrid.appendChild(createEmptyCard("Esta categoria segue reservada para itens que eu não posso incorporar diretamente nesta versão."));
+    return;
+  }
+
+  category.items.forEach((item, index) => {
+    pageGrid.appendChild(createCard({ ...item, delay: index * 70 }));
+  });
+}
+
+function populateQuickAccess() {
+  const quickGrid = document.querySelector("[data-quick-grid]");
+  if (!quickGrid) return;
+
+  Object.entries(hubData).forEach(([key, category]) => {
+    const card = document.createElement("a");
+    card.className = `quick-card ${key}`;
+    card.href = category.page;
+    card.innerHTML = `<span class="quick-label">${category.title}</span><strong>${category.description}</strong>`;
+    quickGrid.appendChild(card);
   });
 }
 
@@ -138,6 +227,29 @@ function setupNavbar() {
   });
 }
 
+function setupThemeToggle() {
+  const themeButton = document.getElementById("themeToggle");
+  if (!themeButton) return;
+
+  const storedTheme = localStorage.getItem("hub-theme");
+  if (storedTheme === "light") {
+    document.body.classList.add("light");
+  }
+
+  const syncThemeIcon = () => {
+    const isLight = document.body.classList.contains("light");
+    themeButton.textContent = isLight ? "☀️" : "🌙";
+    themeButton.setAttribute("aria-label", isLight ? "Ativar tema escuro" : "Ativar tema claro");
+  };
+
+  syncThemeIcon();
+  themeButton.addEventListener("click", () => {
+    document.body.classList.toggle("light");
+    localStorage.setItem("hub-theme", document.body.classList.contains("light") ? "light" : "dark");
+    syncThemeIcon();
+  });
+}
+
 function setupCarousels() {
   document.querySelectorAll(".carousel-shell").forEach((shell) => {
     const row = shell.querySelector(".card-row");
@@ -160,8 +272,10 @@ function setupCarousels() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  populateCards("[data-category]", "category");
-  populateCards("[data-grid]", "grid");
+  populateQuickAccess();
+  populateCategoryRows();
+  populateCategoryPage();
   setupNavbar();
+  setupThemeToggle();
   setupCarousels();
 });
