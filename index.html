@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Hub profissional com categorias organizadas, visual estilo Netflix e tema claro ou escuro.">
+  <meta name="description" content="Hub profissional com categorias organizadas e visual escuro estilo Netflix.">
   <title>Hub | Home</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,18 +14,9 @@
   <header class="navbar" id="navbar">
     <div class="nav-inner">
       <a class="logo" href="index.html">Hub</a>
-      <div class="nav-actions">
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Alternar tema">🌙</button>
-        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
       <nav class="nav-menu" id="navMenu">
         <a href="index.html" class="active">Home</a>
         <a href="educacao.html">Educação</a>
-        <a href="entretenimento.html">Entretenimento</a>
         <a href="jogos.html">Jogos</a>
         <a href="ferramentas.html">Ferramentas</a>
         <a href="design.html">Design</a>
@@ -34,6 +25,11 @@
         <a href="automotivo.html">Automotivo</a>
         <a href="outros.html">Outros</a>
       </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
@@ -69,21 +65,6 @@
       <div class="carousel-shell">
         <button class="carousel-btn prev" type="button" aria-label="Voltar itens"><span>&lsaquo;</span></button>
         <div class="card-row" data-category="educacao"></div>
-        <button class="carousel-btn next" type="button" aria-label="Avançar itens"><span>&rsaquo;</span></button>
-      </div>
-    </section>
-
-    <section class="carousel-section container">
-      <div class="section-heading row-heading">
-        <div>
-          <span class="section-tag">Catálogo</span>
-          <h2>Entretenimento</h2>
-        </div>
-        <a href="entretenimento.html" class="section-link">Ver tudo</a>
-      </div>
-      <div class="carousel-shell">
-        <button class="carousel-btn prev" type="button" aria-label="Voltar itens"><span>&lsaquo;</span></button>
-        <div class="card-row" data-category="entretenimento"></div>
         <button class="carousel-btn next" type="button" aria-label="Avançar itens"><span>&rsaquo;</span></button>
       </div>
     </section>
@@ -195,7 +176,7 @@
   </main>
 
   <footer class="site-footer">
-    <p>Hub profissional com visual inspirado em streaming, tema claro ou escuro e estrutura pronta para crescer.</p>
+    <p>Hub profissional com visual inspirado em streaming, tema escuro fixo e estrutura pronta para crescer.</p>
   </footer>
 
   <script src="script.js"></script>

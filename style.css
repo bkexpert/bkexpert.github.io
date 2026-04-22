@@ -1,4 +1,4 @@
-/* Variaveis globais para os temas e para o ritmo visual do hub. */
+/* Variaveis globais para o tema escuro e para o ritmo visual do hub. */
 :root {
   --bg: #0f0f0f;
   --surface: #1a1a1a;
@@ -14,17 +14,6 @@
   --radius-lg: 28px;
   --radius-md: 20px;
   --radius-sm: 16px;
-}
-
-body.light {
-  --bg: #ffffff;
-  --surface: #f0f0f0;
-  --surface-2: rgba(0, 0, 0, 0.05);
-  --text: #111111;
-  --muted: rgba(17, 17, 17, 0.7);
-  --accent-soft: rgba(229, 9, 20, 0.12);
-  --border: rgba(0, 0, 0, 0.08);
-  --shadow: 0 14px 36px rgba(0, 0, 0, 0.12);
 }
 
 * {
@@ -45,13 +34,6 @@ body {
     var(--bg);
   color: var(--text);
   transition: background 0.3s ease, color 0.3s ease;
-}
-
-body.light {
-  background:
-    radial-gradient(circle at top right, rgba(229, 9, 20, 0.08), transparent 22%),
-    radial-gradient(circle at left center, rgba(0, 0, 0, 0.04), transparent 24%),
-    var(--bg);
 }
 
 body.menu-open {
@@ -125,13 +107,6 @@ button {
   transform: translateY(-1px);
 }
 
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.theme-toggle,
 .menu-toggle,
 .carousel-btn {
   width: 48px;
@@ -147,7 +122,6 @@ button {
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.theme-toggle:hover,
 .menu-toggle:hover,
 .carousel-btn:hover {
   transform: translateY(-2px);
@@ -173,7 +147,23 @@ button {
   display: flex;
   align-items: flex-end;
   overflow: hidden;
-  padding: calc(var(--nav-height) + 54px) 0 72px;
+  padding: calc(var(--nav-height) + 110px) 0 72px;
+}
+
+.site-banner {
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  right: 0;
+  z-index: 45;
+  padding: 12px 20px;
+  text-align: center;
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.88);
+  background: linear-gradient(90deg, rgba(229, 9, 20, 0.18), rgba(255, 255, 255, 0.04));
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
 }
 
 .home-hero {
@@ -487,10 +477,6 @@ button {
   color: var(--muted);
 }
 
-.empty-card {
-  min-height: 260px;
-}
-
 .category-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -583,7 +569,7 @@ button {
 
   .hero,
   .page-hero {
-    padding: calc(var(--nav-height) + 34px) 0 56px;
+    padding: calc(var(--nav-height) + 96px) 0 56px;
   }
 
   .hero h1,

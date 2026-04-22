@@ -1,3 +1,6 @@
+const MODO_SITE = "pessoal";
+// opcoes: "pessoal" ou "publico"
+
 // Dados organizados por categoria para montar a home e as páginas internas.
 const hubData = {
   educacao: {
@@ -103,6 +106,22 @@ const hubData = {
   }
 };
 
+function shouldDisplayItem(item) {
+  if (MODO_SITE === "publico" && item.sensivel) {
+    return false;
+  }
+
+  return true;
+}
+
+function getVisibleItems(category) {
+  if (!category || !Array.isArray(category.items)) {
+    return [];
+  }
+
+  return category.items.filter(shouldDisplayItem);
+}
+
 function createCard(item, buttonLabel = "Acessar") {
   const article = document.createElement("article");
   article.className = "content-card";
@@ -142,25 +161,23 @@ function createCard(item, buttonLabel = "Acessar") {
   return article;
 }
 
-function createEmptyCard(message) {
-  const card = document.createElement("article");
-  card.className = "content-card empty-card";
-  card.innerHTML = `<div class="card-content"><h3 class="card-title">Em atualização</h3><p class="card-description">${message}</p></div>`;
-  return card;
+function getVisibleCategories() {
+  return Object.entries(hubData).filter(([, category]) => getVisibleItems(category).length > 0);
 }
 
 function populateCategoryRows() {
   document.querySelectorAll("[data-category]").forEach((container) => {
-    const key = container.dataset.category;
+    const key = (container.dataset.category || "").trim();
     const category = hubData[key];
-    if (!category) return;
+    const section = container.closest(".carousel-section");
+    const visibleItems = getVisibleItems(category);
 
-    if (!category.items.length) {
-      container.appendChild(createEmptyCard("Esta categoria segue reservada para itens que eu não posso incorporar diretamente nesta versão."));
+    if (!category || visibleItems.length === 0) {
+      section?.remove();
       return;
     }
 
-    category.items.forEach((item, index) => {
+    visibleItems.forEach((item, index) => {
       container.appendChild(createCard({ ...item, delay: index * 70 }, "Abrir link"));
     });
   });
@@ -172,20 +189,22 @@ function populateCategoryPage() {
   const pageTitle = document.querySelector("[data-page-title]");
   const pageDescription = document.querySelector("[data-page-description]");
   const pageBadge = document.querySelector("[data-page-badge]");
+  const categorySection = document.querySelector(".category-section");
 
   const category = hubData[pageKey];
+  const visibleItems = getVisibleItems(category);
   if (!pageGrid || !category) return;
 
   if (pageTitle) pageTitle.textContent = category.title;
   if (pageDescription) pageDescription.textContent = category.description;
   if (pageBadge) pageBadge.textContent = category.title;
 
-  if (!category.items.length) {
-    pageGrid.appendChild(createEmptyCard("Esta categoria segue reservada para itens que eu não posso incorporar diretamente nesta versão."));
+  if (visibleItems.length === 0) {
+    categorySection?.remove();
     return;
   }
 
-  category.items.forEach((item, index) => {
+  visibleItems.forEach((item, index) => {
     pageGrid.appendChild(createCard({ ...item, delay: index * 70 }));
   });
 }
@@ -194,13 +213,23 @@ function populateQuickAccess() {
   const quickGrid = document.querySelector("[data-quick-grid]");
   if (!quickGrid) return;
 
-  Object.entries(hubData).forEach(([key, category]) => {
+  getVisibleCategories().forEach(([key, category]) => {
     const card = document.createElement("a");
     card.className = `quick-card ${key}`;
     card.href = category.page;
     card.innerHTML = `<span class="quick-label">${category.title}</span><strong>${category.description}</strong>`;
     quickGrid.appendChild(card);
   });
+}
+
+function setupSafetyBanner() {
+  const navbar = document.getElementById("navbar");
+  if (!navbar) return;
+
+  const banner = document.createElement("div");
+  banner.className = "site-banner";
+  banner.textContent = "Alguns links podem direcionar para conteúdos externos. O uso é de responsabilidade do usuário.";
+  navbar.insertAdjacentElement("afterend", banner);
 }
 
 function setupNavbar() {
@@ -227,29 +256,6 @@ function setupNavbar() {
   });
 }
 
-function setupThemeToggle() {
-  const themeButton = document.getElementById("themeToggle");
-  if (!themeButton) return;
-
-  const storedTheme = localStorage.getItem("hub-theme");
-  if (storedTheme === "light") {
-    document.body.classList.add("light");
-  }
-
-  const syncThemeIcon = () => {
-    const isLight = document.body.classList.contains("light");
-    themeButton.textContent = isLight ? "☀️" : "🌙";
-    themeButton.setAttribute("aria-label", isLight ? "Ativar tema escuro" : "Ativar tema claro");
-  };
-
-  syncThemeIcon();
-  themeButton.addEventListener("click", () => {
-    document.body.classList.toggle("light");
-    localStorage.setItem("hub-theme", document.body.classList.contains("light") ? "light" : "dark");
-    syncThemeIcon();
-  });
-}
-
 function setupCarousels() {
   document.querySelectorAll(".carousel-shell").forEach((shell) => {
     const row = shell.querySelector(".card-row");
@@ -272,10 +278,10 @@ function setupCarousels() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  setupSafetyBanner();
   populateQuickAccess();
   populateCategoryRows();
   populateCategoryPage();
   setupNavbar();
-  setupThemeToggle();
   setupCarousels();
 });
